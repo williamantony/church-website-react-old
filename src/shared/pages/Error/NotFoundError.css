@@ -1,0 +1,45 @@
+.NotFoundError__content {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  max-height: 800px;
+  background-color: #fff;
+}
+
+.NotFoundError__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  opacity: 0.5;
+}
+
+.NotFoundError__text__error-title {
+  color: var(--color-dark);
+  font-size: 200px;
+  font-weight: 700;
+  text-shadow: 4px 0px 0px;
+  letter-spacing: 10px;
+  margin-bottom: 25px;
+}
+
+.NotFoundError__text__error-description {
+  color: var(--color-dark);
+  font-size: 48px;
+  font-weight: 500;
+}
+
+.NotFoundError__clear__bg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
