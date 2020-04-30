@@ -1,0 +1,23 @@
+.HeaderSearchIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.HeaderSearchIcon__icon {
+  position: relative;
+  width: 27px;
+  height: 27px;
+  background-image: url("./images/search.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.Header--theme-dark .HeaderSearchIcon__icon,
+.Header--theme-transparent .HeaderSearchIcon__icon {
+  filter: invert(1);
+}
