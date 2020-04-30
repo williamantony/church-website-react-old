@@ -1,0 +1,37 @@
+.HomePrimeInfo {
+  position: relative;
+}
+
+.HomePrimeInfo__gradient {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 75%, rgba(255,255,255,1) 100%);
+  background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 75%,rgba(255,255,255,1) 100%);
+  background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 75%,rgba(255,255,255,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
+}
+
+.HomePrimeInfo__bg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+.HomePrimeInfo__bg--one {
+  background-color: #dddddd;
+}
+.HomePrimeInfo__bg--two {
+  width: 50%;
+  background-color: #dddddd;
+}
+
+.HomePrimeInfo__holder {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 175px;
+}
