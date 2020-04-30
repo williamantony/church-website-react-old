@@ -1,0 +1,25 @@
+.SliderItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-basis: calc(100% / 3);
+  width: calc(100% / 3);
+  height: 100%;
+}
+
+.SliderItem:nth-child(2) {
+  background-color: #ffbf004b;
+}
+.SliderItem:nth-child(3) {
+  background-color: #00ccff4b;
+}
+.SliderItem:nth-child(4) {
+  background-color: #ff00b34b;
+}
+
+.SliderItem__content {
+  width: 1000px;
+  /* height: 500px; */
+  /* background-color: rgba(255, 255, 255, 0.144); */
+}

@@ -1,0 +1,26 @@
+.SliderControls {
+  position: relative;
+  height: 75px;
+  margin-top: -75px;
+}
+
+.SliderControls__arrows {
+  display: flex;
+  position: relative;
+  width: 200px;
+  height: 75px;
+  margin: 0px 0px 0px auto;
+}
+
+.SliderControls__button {
+  width: 50%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+.SliderControls__button:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.SliderControls__button:hover {
+  background-color: rgba(0, 0, 0, 0.75);
+}
