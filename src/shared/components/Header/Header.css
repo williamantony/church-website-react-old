@@ -1,0 +1,35 @@
+.Header {
+  position: relative;
+  margin-bottom: -125px;
+  z-index: 99999;
+}
+
+.Header--theme-light,
+.Header--theme-transparent {
+  background-color: transparent;
+}
+.Header--theme-dark {
+  background-color: var(--color-dark);
+}
+
+.Header__bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 125px;
+  padding: 0px 25px;
+}
+
+.Header__bar__group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Header__bar__buttons .Button:not(:first-child) {
+  margin-left: 10px;
+}
+
+.Header .HeaderMenuIcon {
+  margin-left: 50px;
+}
