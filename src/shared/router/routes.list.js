@@ -1,5 +1,5 @@
-import Home from "../ui/pages/Home/Home";
-import NotFoundError from "../ui/pages/error/NotFoundError";
+import Home from "../pages/Home/Home";
+import NotFoundError from "../pages/Error/NotFoundError";
 
 const routes = [
   {

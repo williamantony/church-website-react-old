@@ -5,7 +5,7 @@ const Routes = function({ routes }) {
   return (
     <Switch>
       {
-        routes.map(route => <Route { ...route } />)
+        routes.map((route, index) => <Route key={ index } { ...route } />)
       }
     </Switch>
   );
