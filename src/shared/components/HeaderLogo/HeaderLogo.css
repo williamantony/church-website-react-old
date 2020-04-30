@@ -1,0 +1,49 @@
+.HeaderLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 360px;
+  height: 100%;
+}
+
+.HeaderLogo__image {
+  position: relative;
+  width: 275px;
+  height: 58px;
+  margin-top: -10px;
+}
+
+.HeaderLogo__image__img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 1.0;
+  background-size: 275px auto;
+  background-position: center 0px;
+  background-repeat: no-repeat;
+  transition: opacity 0.25s ease-in-out 0s;
+}
+
+.HeaderLogo__image__img--light {
+  background-image: url("./images/logo_full_dark_750x200.png");
+}
+.HeaderLogo__image__img--dark {
+  background-image: url("./images/logo_full_light_750x200.png");
+}
+
+.Header--theme-dark .HeaderLogo__image__img--light,
+.Header--theme-light .HeaderLogo__image__img--dark {
+  opacity: 0;
+}
+
+
+
+.HeaderLogo__image {
+  width: 300px;
+  height: 60px;
+}
+.HeaderLogo__image__img {
+  background-size: 300px auto;
+}
