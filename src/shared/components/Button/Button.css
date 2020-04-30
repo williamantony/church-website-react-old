@@ -1,0 +1,172 @@
+.Button {
+  position: relative;
+  border: 0px;
+  border-radius: 3px;
+  box-shadow: inset 0px 0px 0px 2px transparent;
+  overflow: hidden;
+  transition: background 0.25s ease-in-out 0s,
+    box-shadow 0.25s ease-in-out 0s;
+  cursor: pointer;
+}
+
+.Button__text {
+  position: relative;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-shadow: 0px 0px 0.75px;
+  transition: color 0.25s ease-in-out 0s,
+    text-shadow 0.25s ease-in-out 0s;
+}
+
+.Button__bg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 0%;
+  height: 100%;
+  opacity: 0;
+  transition: width 0.25s ease-in-out 0s,
+    opacity 0.25s ease-in-out 0s;
+}
+.Button--color-light .Button__bg {
+  background-color: #000;
+}
+.Button--color-light:hover .Button__bg {
+  opacity: 0.1;
+}
+.Button--color-dark .Button__bg {
+  background-color: #fff;
+}
+.Button--color-dark:hover .Button__bg {
+  opacity: 0.15;
+}
+
+/*
+  Small
+*/
+
+.Button--size-small {
+  padding: 10px 20px;
+}
+.Button--size-small .Button__text {
+  font-size: 18px;
+}
+
+/*
+  Medium
+*/
+
+.Button--size-medium {
+  padding: 15px 35px;
+}
+.Button--size-medium .Button__text {
+  font-size: 20px;
+}
+
+/*
+  Big
+*/
+
+.Button--size-big {
+  padding: 15px 35px;
+}
+.Button--size-big .Button__text {
+  font-size: 22px;
+}
+
+/*
+  textOnly
+*/
+
+.Button--textOnly {
+  box-shadow: inset 0px 0px 0px 2px transparent;
+  background-color: transparent;
+}
+.Button--textOnly.Button--hover-textOnly:hover .Button__bg {
+  width: 100%;
+}
+.Button--textOnly.Button--hover-solid:hover {
+  box-shadow: inset 0px 0px 0px 2px transparent;
+  background-color: currentColor;
+}
+.Button--textOnly.Button--hover-outline:hover {
+  box-shadow: inset 0px 0px 0px 2px currentColor;
+  background-color: transparent;
+}
+
+.Button--textOnly.Button--hover-solid.Button--color-light:hover .Button__text {
+  color: #111;
+  text-shadow: 0px 0px 0.5px currentColor;
+}
+.Button--textOnly.Button--hover-solid.Button--color-dark:hover .Button__text {
+  color: #fff;
+  text-shadow: 0px 0px 0.5px #000;
+}
+
+.Button--textOnly.Button--hover-outline.Button--color-light:hover .Button__text,
+.Button--textOnly.Button--hover-outline.Button--color-dark:hover .Button__text {
+  color: currentColor;
+  text-shadow: 0px 0px 0.5px currentColor;
+}
+
+
+/*
+  solid
+*/
+
+.Button--solid {
+  box-shadow: inset 0px 0px 0px 2px transparent;
+  background-color: currentColor;
+}
+.Button--solid.Button--hover-outline:hover {
+  box-shadow: inset 0px 0px 0px 2px currentColor;
+  background-color: transparent;
+}
+.Button--solid.Button--hover-solid:hover .Button__bg {
+  width: 100%;
+}
+
+.Button--solid.Button--color-dark .Button__text {
+  color: #fff;
+  text-shadow: 0px 0px 0.5px currentColor;
+}
+.Button--solid.Button--color-light .Button__text {
+  color: #111;
+  text-shadow: 0px 0px 0.5px currentColor;
+}
+
+.Button--solid.Button--color-dark.Button--hover-outline:hover .Button__text,
+.Button--solid.Button--color-light.Button--hover-outline:hover .Button__text {
+  color: currentColor;
+  text-shadow: 0px 0px 0.5px currentColor;
+}
+
+/*
+  Outline
+*/
+
+.Button--outline {
+  box-shadow: inset 0px 0px 0px 2px currentColor;
+  background-color: transparent;
+}
+.Button--outline:hover {
+  box-shadow: inset 0px 0px 0px 2px transparent;
+  background-color: currentColor;
+}
+
+.Button--outline.Button--color-light .Button__text,
+.Button--outline.Button--color-dark .Button__text {
+  color: currentColor;
+  text-shadow: 0px 0px 0.5px currentColor;
+}
+
+.Button--outline.Button--color-light:hover .Button__text {
+  color: #111;
+  text-shadow: 0px 0px 0.5px currentColor;
+}
+.Button--outline.Button--color-dark:hover .Button__text {
+  color: #fff;
+  text-shadow: 0px 0px 0.5px currentColor;
+}
