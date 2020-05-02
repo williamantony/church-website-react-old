@@ -1,0 +1,57 @@
+.AboutLocation {
+  position: relative;
+  padding: 100px 100px 100px 100px;
+  background-color: #fff;
+}
+
+.AboutLocation__text {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.AboutLocation__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.AboutLocation__image {
+  flex-basis: calc(100% - 480px);
+  padding: 2px;
+  box-shadow: 30px 30px 20px -10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+.AboutLocation__image img {
+  width: 100%;
+  filter: contrast(1.05) saturate(1.15);
+}
+
+.AboutLocation__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 480px;
+  margin-left: 50px;
+}
+.AboutLocation__info__icon {
+  position: relative;
+  width: 75px;
+  height: 75px;
+  background-image: url("./images/placeholder-icon-outline-black.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  filter: invert(1);
+}
+.AboutLocation__info__text {
+  color: var(--color-dark);
+  font-size: 24px;
+  font-family: "Arsenal", sans-serif;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 0.5px;
+  line-height: 36px;
+  text-shadow: 0.5px 0px 0px;
+  margin: 35px 0px 35px 0px;
+}
