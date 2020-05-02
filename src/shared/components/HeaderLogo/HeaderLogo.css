@@ -21,15 +21,15 @@
   height: 100%;
   opacity: 1.0;
   background-size: 275px auto;
-  background-position: center 0px;
+  background-position: 0px 0px;
   background-repeat: no-repeat;
   transition: opacity 0.25s ease-in-out 0s;
 }
 
-.HeaderLogo__image__img--light {
+.HeaderLogo--logo-ipa .HeaderLogo__image__img--light {
   background-image: url("./images/logo_full_dark_750x200.png");
 }
-.HeaderLogo__image__img--dark {
+.HeaderLogo--logo-ipa .HeaderLogo__image__img--dark {
   background-image: url("./images/logo_full_light_750x200.png");
 }
 
@@ -40,10 +40,54 @@
 
 
 
-.HeaderLogo__image {
+.HeaderLogo--size-small.HeaderLogo--type-icon .HeaderLogo__image {
+  width: 84px;
+  height: 58px;
+}
+.HeaderLogo--size-small.HeaderLogo--type-name .HeaderLogo__image {
+  width: 275px;
+  height: 58px;
+}
+.HeaderLogo--size-small.HeaderLogo--type-full .HeaderLogo__image {
+  width: 275px;
+  height: 72px;
+}
+.HeaderLogo--size-small .HeaderLogo__image__img {
+  background-size: 275px auto;
+}
+
+
+
+.HeaderLogo--size-medium.HeaderLogo--type-icon .HeaderLogo__image {
+  width: 92px;
+  height: 60px;
+}
+.HeaderLogo--size-medium.HeaderLogo--type-name .HeaderLogo__image {
   width: 300px;
   height: 60px;
 }
-.HeaderLogo__image__img {
+.HeaderLogo--size-medium.HeaderLogo--type-full .HeaderLogo__image {
+  width: 300px;
+  height: 80px;
+}
+.HeaderLogo--size-medium .HeaderLogo__image__img {
   background-size: 300px auto;
+}
+
+
+
+.HeaderLogo--size-large.HeaderLogo--type-icon .HeaderLogo__image {
+  width: 110px;
+  height: 70px;
+}
+.HeaderLogo--size-large.HeaderLogo--type-name .HeaderLogo__image {
+  width: 360px;
+  height: 70px;
+}
+.HeaderLogo--size-large.HeaderLogo--type-full .HeaderLogo__image {
+  width: 360px;
+  height: 95px;
+}
+.HeaderLogo--size-large .HeaderLogo__image__img {
+  background-size: 360px auto;
 }

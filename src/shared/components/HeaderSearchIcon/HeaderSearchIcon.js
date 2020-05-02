@@ -1,12 +1,23 @@
 import React from "react";
+import { connect } from "react-redux";
+import { showSearchBar } from "../../redux/actions";
 import "./HeaderSearchIcon.css";
 
-const HeaderSearchIcon = function(props) {
+const HeaderSearchIcon = function({ showSearchBar }) {
   return (
-    <div className="HeaderSearchIcon">
+    <div className="HeaderSearchIcon" onClick={ showSearchBar }>
       <div className="HeaderSearchIcon__icon"></div>
     </div>
   );
 };
 
-export default HeaderSearchIcon;
+const mapStateToProps = state => {
+  return {};
+};
+
+const mapDispatchToProps = {
+  showSearchBar
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderSearchIcon);
+
