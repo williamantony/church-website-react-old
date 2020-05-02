@@ -1,0 +1,13 @@
+.AboutSummary {
+  position: relative;
+  padding: 100px 100px;
+  background-color: #fff;
+}
+
+.AboutSummary__text {
+  text-align: center;
+  padding: 0px 50px;
+}
+.AboutSummary__text h2 {
+  margin-bottom: 40px;
+}
