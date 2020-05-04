@@ -1,3 +1,5 @@
+import store from "../ReduxStore";
+
 /* NAVIGATION */
 export const SET_NAVIGATION_VISIBILITY = "SET_NAVIGATION_VISIBILITY";
 
@@ -19,6 +21,13 @@ export const showNavigation = () => {
 export const hideNavigation = () => {
   return dispatch => {
     dispatch(setNavigationVisibility(false));
+  };
+};
+
+export const toggleNavigation = () => {
+  return dispatch => {
+    const { isNavigationVisible } = store.getState().theme;
+    dispatch(setNavigationVisibility(!isNavigationVisible));
   };
 };
 

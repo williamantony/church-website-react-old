@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { showNavigation } from "../../redux/actions";
+import { toggleNavigation } from "../../redux/actions";
 import "./HeaderMenuIcon.css";
 
 class HeaderMenuIcon extends Component {
@@ -22,7 +22,7 @@ class HeaderMenuIcon extends Component {
     const className = `HeaderMenuIcon${ isOpenedClassName }`;
 
     return (
-      <div className={ className } onClick={ this.props.showNavigation }>
+      <div className={ className } onClick={ this.props.toggleNavigation }>
         <div className="HeaderMenuIcon__holder">
           <div className="HeaderMenuIcon__line"></div>
           <div className="HeaderMenuIcon__line"></div>
@@ -40,7 +40,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-  showNavigation,
+  toggleNavigation,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HeaderMenuIcon);

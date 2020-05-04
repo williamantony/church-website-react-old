@@ -1,6 +1,6 @@
 .AboutLocation {
   position: relative;
-  padding: 100px 100px 100px 100px;
+  padding: 100px 0px;
   background-color: #fff;
 }
 
@@ -17,7 +17,7 @@
 
 .AboutLocation__image {
   flex-basis: calc(100% - 480px);
-  padding: 2px;
+  padding: 5px;
   box-shadow: 30px 30px 20px -10px rgba(0, 0, 0, 0.1);
   background-color: #fff;
 }

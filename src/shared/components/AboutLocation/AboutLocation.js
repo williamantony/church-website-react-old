@@ -6,7 +6,7 @@ import churchPhoto from "./images/church_image.png";
 const AboutLocation = function(props) {
   return (
     <div className="AboutLocation">
-      <div className="wrapper wrapper--inner">
+      <div className="wrapper wrapper--content">
         <div className="AboutLocation__content">
           <div className="AboutLocation__image">
             <img src={churchPhoto} alt="IPA Chicago Church Building" draggable={false} />
