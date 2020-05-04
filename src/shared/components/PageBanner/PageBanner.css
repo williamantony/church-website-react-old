@@ -1,0 +1,15 @@
+.PageBanner {
+  position: relative;
+  width: 100%;
+  min-height: 320px;
+  background-color: var(--color-dark);
+}
+
+.PageBanner__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.PageBanner__content__holder {
+  margin-top: 125px;
+}

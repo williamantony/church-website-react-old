@@ -1,0 +1,15 @@
+.PageTitle {
+
+}
+
+.PageTitle__title {
+  color: var(--color-yellow-pale);
+  font-size: 56px;
+  font-family: "Arsenal", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.PageTitle__subtitle {
+
+}
