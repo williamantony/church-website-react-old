@@ -1,6 +1,9 @@
 .HomeAboutGrid {
-  padding: 0px 0px 100px 0px;
+  padding: 100px 0px;
   background-color: #f6f6f6;
+}
+.Page--home .HomeAboutGrid {
+  padding: 0px 0px 100px 0px;
 }
 
 .HomeAboutGrid__grid {

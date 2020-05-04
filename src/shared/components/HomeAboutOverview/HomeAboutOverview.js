@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import "./HomeAboutOverview.css";
 
@@ -16,7 +17,9 @@ const HomeAboutOverview = function(props) {
           </p>
           <br/>
           <br/>
-          <Button text="Learn More" type="outline" bgColor="#263238" />
+          <Link to="/about">
+            <Button text="Learn More" type="outline" bgColor="#263238" />
+          </Link>
         </div>
       </div>
     </div>

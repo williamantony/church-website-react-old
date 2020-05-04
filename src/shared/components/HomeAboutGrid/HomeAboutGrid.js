@@ -7,9 +7,9 @@ const HomeAboutGrid = function(props) {
     <div className="HomeAboutGrid">
       <div className="wrapper wrapper--content">
         <div className="HomeAboutGrid__grid">
-          <HomeAboutGridItem title="Our Beliefs" icon="beliefs" />
-          <HomeAboutGridItem title="Our Ministries" icon="ministries" />
-          <HomeAboutGridItem title="Our Leadership" icon="leadership" />
+          <HomeAboutGridItem title="Our Beliefs" icon="beliefs" to="/about/beliefs" />
+          <HomeAboutGridItem title="Our Ministries" icon="ministries" to="/about/ministries" />
+          <HomeAboutGridItem title="Our Leadership" icon="leadership" to="/about/leadership" />
         </div>
       </div>
     </div>

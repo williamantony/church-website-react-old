@@ -2,6 +2,10 @@
   flex-basis: calc(100% / 3);
 }
 
+.HomeAboutGridItem a {
+  text-decoration: none;
+}
+
 .HomeAboutGridItem__holder {
   display: flex;
   justify-content: center;
