@@ -1,0 +1,22 @@
+.BeliefsListItem {
+  padding: 75px 0px;
+}
+.BeliefsListItem {
+  border-radius: 5px;
+}
+.BeliefsListItem:nth-child(odd) {
+  background-color: #f6f6f6;
+}
+
+.BeliefsListItem .wrapper {
+  max-width: 800px;
+}
+
+.BeliefsListItem__head {
+  color: var(--color-blue);
+  font-size: 24px;
+  font-weight: 400;
+  font-family: "Arsenal", sans-serif;
+  letter-spacing: 0.75px;
+  margin-bottom: 15px;
+}
