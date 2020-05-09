@@ -1,0 +1,20 @@
+.PrimaryHeader {
+  position: relative;
+  padding: 0px 25px;
+  z-index: 1;
+}
+
+.PrimaryHeader__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.PrimaryHeader__main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: calc(100% - 75px);
+  height: 125px;
+  transition: opacity 0.25s ease-in-out 0s;
+}
