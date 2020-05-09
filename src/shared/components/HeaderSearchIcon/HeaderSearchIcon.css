@@ -2,9 +2,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  height: 50px;
+  width: 75px;
+  height: 75px;
   cursor: pointer;
+}
+
+.Header .HeaderSearchIcon {
+  margin-right: 15px;
 }
 
 .HeaderSearchIcon__icon {
@@ -15,9 +19,11 @@
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  transition: filter 0.25s ease-in-out 0.5s;
 }
 
 .Header--theme-dark .HeaderSearchIcon__icon,
 .Header--theme-transparent .HeaderSearchIcon__icon {
   filter: invert(1);
+  transition: filter 0.25s ease-in-out 0.35s;
 }
