@@ -1,0 +1,21 @@
+.Navigation {
+  /* position: relative;
+  height: 275px;
+  background-color: #fff;
+  overflow: hidden;
+  z-index: 1; */
+}
+/*
+.Navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 50px 0px;
+}
+
+.Navigation__item {
+  flex-basis: calc((100% / 4) - 20px);
+  height: 150px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.05);
+} */
