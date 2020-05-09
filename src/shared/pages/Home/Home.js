@@ -1,18 +1,19 @@
 import React from 'react';
 import Page from '../../components/Page/Page';
-import HomePrimeInfo from '../../components/HomePrimeInfo/HomePrimeInfo';
-import Cover from '../../components/Cover/Cover';
 import Header from '../../components/Header/Header';
+import PrimaryHeader from '../../components/PrimaryHeader/PrimaryHeader';
+import Cover from '../../components/Cover/Cover';
 import Slider from '../../components/Slider/Slider';
 import SliderItem from '../../components/SliderItem/SliderItem';
 import HomeWelcome from '../../components/HomeWelcome/HomeWelcome';
+import HomePrimeInfo from '../../components/HomePrimeInfo/HomePrimeInfo';
 import HomeGreetings from '../../components/HomeGreetings/HomeGreetings';
 import HomeAbout from '../../components/HomeAbout/HomeAbout';
 
 const Home = function(props) {
   return (
-    <Page>
-      <Header />
+    <Page name="home">
+      <Header component={ <PrimaryHeader logo="ipa" /> } />
       <Cover animate={ true }>
         <Slider>
           <SliderItem>
