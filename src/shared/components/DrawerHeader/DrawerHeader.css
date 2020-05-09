@@ -1,0 +1,20 @@
+.DrawerHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 124px;
+  padding: 0px 25px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.DrawerHeader__holder {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.DrawerHeader__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: calc(100% - 150px);
+}
