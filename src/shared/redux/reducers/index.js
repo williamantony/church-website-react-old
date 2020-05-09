@@ -1,8 +1,10 @@
 import { combineReducers } from "redux";
-import app from "./app.reducer";
-import theme from "./theme.reducer";
+import drawer from "./drawer.reducer";
+import page from "./page.reducer";
+import search from "./search.reducer";
 
 export default combineReducers({
-  app,
-  theme,
+  drawer,
+  page,
+  search,
 });
