@@ -1,0 +1,16 @@
+.LeadershipGrid {
+  position: relative;
+  padding: 100px 0px;
+  background-color: #ffffff;
+}
+
+.LeadershipGrid h2 {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.LeadershipGrid__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

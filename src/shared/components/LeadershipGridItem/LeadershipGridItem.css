@@ -1,0 +1,52 @@
+.LeadershipGridItem {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  flex-basis: 400px;
+  margin: 35px;
+}
+
+.LeadershipGridItem__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: var(--color-dark);
+  font-family: "Roboto", sans-serif;
+  text-align: left;
+  margin: 35px 0px 0px 35px;
+}
+.LeadershipGridItem__info__name {
+  font-size: 26px;
+  font-family: "Arsenal", sans-serif;
+  letter-spacing: 0.75px;
+  text-shadow: 1px 0px 0px;
+  margin-bottom: 10px;
+}
+.LeadershipGridItem__info__role {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+
+
+.LeadershipGridItem__image {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.LeadershipGridItem__image img {
+  position: relative;
+  width: 100%;
+}
+.LeadershipGridItem__image--joseph {
+  filter: saturate(0.85) contrast(1.15) brightness(1.25);
+}
+.LeadershipGridItem__image--joseph img {
+  width: 140%;
+  top: -10%;
+  left: -20%;
+}
