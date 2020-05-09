@@ -1,0 +1,9 @@
+.SearchDrawer {
+  padding: 25px 0px;
+}
+
+.SearchDrawer__holder {
+  position: relative;
+  padding: 0px 25px;
+  z-index: 2;
+}
