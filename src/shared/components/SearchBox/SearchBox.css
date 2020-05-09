@@ -1,0 +1,70 @@
+.SearchBox {
+
+}
+
+.SearchBox__block {
+  position: relative;
+  z-index: 2;
+  border-radius: 37.5px;
+  background-color: rgba(0, 0, 0, 0.075);
+  overflow: hidden;
+  cursor: text;
+  transition: background-color 0.25s ease-in-out 0s;
+}
+.SearchBox--focused .SearchBox__block {
+  background-color: #fff;
+}
+
+.SearchBox__input {
+  display: flex;
+  height: 75px;
+  padding: 0px 75px 0px 35px;
+}
+
+.SearchBox__input-element {
+  flex-basis: 100%;
+  width: 100%;
+  color: #000;
+  font-size: 32px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.SearchBox__icon {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background-image: url("../../images/icons/search.png");
+  background-size: auto 35%;
+  background-position: 17px center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.SearchBox__overlay {
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-dark);
+  z-index: 1;
+  transition: visibility 0.5s ease-in-out 0s,
+    opacity 0.5s ease-in-out 0s;
+}
+.SearchBox--focused .SearchBox__overlay {
+  visibility: visible;
+  opacity: 0.85;
+  transition: visibility 0.5s ease-in-out 0s,
+    opacity 0.5s ease-in-out 0s;
+}
