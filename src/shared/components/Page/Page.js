@@ -1,24 +1,49 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { closeDrawer } from "../../redux/actions";
+import Drawer from "../Drawer/Drawer";
 import "./Page.css";
 
 class Page extends Component {
-  state = {
-    isFocused: true,
+  componentDidMount() {
+    window.scrollTo(0, 0);
   }
 
   render() {
-    const isFocused = this.state.isFocused ? "focused" : "unfocused";
-    const pageClassName = `Page Page--${ isFocused }`;
+    const { name, isActive, isScrollable } = this.props;
+
+    if (isScrollable)
+      document.body.classList.remove("no-scroll");
+    else document.body.classList.add("no-scroll");
+
+    const classes = {
+      name: ` Page--${ name }`,
+      active: ` Page--${ isActive ? "active" : "inactive" }`
+    };
 
     return (
       <div className="wrapper wrapper--outer">
-        <div className={ pageClassName }>
-          { this.props.children }
-          <div className="Page__overlay"></div>
+        <div className={ `Page${ classes.name }${ classes.active }` }>
+          <Drawer />
+          <div className="Page__content">
+            { this.props.children }
+          </div>
         </div>
       </div>
     );
   }
 }
 
-export default Page;
+const mapStateToProps = state => {
+  const { isActive, isScrollable } = state.page;
+  return {
+    isActive,
+    isScrollable,
+  };
+};
+
+const mapDispatchToProps = {
+  closeDrawer,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Page);
