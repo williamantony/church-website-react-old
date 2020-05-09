@@ -1,25 +1,28 @@
 import React from "react";
-import HeaderLogo from "../HeaderLogo/HeaderLogo";
-import HeaderMenuIcon from "../HeaderMenuIcon/HeaderMenuIcon";
-import HeaderSearchIcon from "../HeaderSearchIcon/HeaderSearchIcon";
+import { connect } from "react-redux";
 import "./Header.css";
 
-const Header = function({ theme = "transparent", logo = "ipa" }) {
-  const headerClassName = `Header Header--theme-${ theme } Header--logo-${ logo }`;
+const Header = function({ theme = "transparent", logo = "ipa", component }) {
+  const classes = {
+    theme: ` Header--theme-${ theme }`,
+    logo: ` Header--logo-${ logo }`,
+  };
 
   return (
-    <header className={ headerClassName }>
-      <div className="wrapper wrapper--inner">
-        <div className="Header__bar">
-          <HeaderLogo logo={ logo } />
-          <div className="Header__bar__group">
-            <HeaderSearchIcon />
-            <HeaderMenuIcon />
-          </div>
-        </div>
-      </div>
+    <header className={ `Header${ classes.theme }${ classes.logo }` }>
+      { component }
     </header>
   );
 };
 
-export default Header;
+const mapStateToProps = (state, props) => {
+  return {
+    theme: state.drawer.isOpen ? "light" : props.theme,
+  };
+};
+
+const mapDispatchToProps = {
+  
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
