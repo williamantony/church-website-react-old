@@ -23,7 +23,7 @@
   background-size: 275px auto;
   background-position: 0px 0px;
   background-repeat: no-repeat;
-  transition: opacity 0.25s ease-in-out 0s;
+  transition: opacity 0.25s ease-in-out 0.35s;
 }
 
 .HeaderLogo--logo-ipa .HeaderLogo__image__img--light {
@@ -32,10 +32,15 @@
 .HeaderLogo--logo-ipa .HeaderLogo__image__img--dark {
   background-image: url("./images/logo_full_light_750x200.png");
 }
-
 .Header--theme-dark .HeaderLogo__image__img--light,
 .Header--theme-light .HeaderLogo__image__img--dark {
   opacity: 0;
+  transition: opacity 0.25s ease-in-out 0.5s;
+}
+.Header--theme-dark .HeaderLogo__image__img--dark,
+.Header--theme-light .HeaderLogo__image__img--light {
+  opacity: 1.0;
+  transition: opacity 0.25s ease-in-out 0.35s;
 }
 
 
