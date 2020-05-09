@@ -1,3 +1,11 @@
+:root {
+  --color-dark: #263238;
+  --color-red: #e92a2a;
+  --color-yellow: #ffc107;
+  --color-yellow-pale: #ffd46c;
+  --color-blue: #008ed3;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -6,17 +14,18 @@ body {
   background-color: #cccccc;
 }
 
-:root {
-  --color-dark: #263238;
-  --color-red: #e92a2a;
-  --color-yellow: #ffc107;
-  --color-blue: #008ed3;
+.no-scroll {
+  overflow: hidden;
 }
-
-
+.no-scroll #root {
+  overflow-y: hidden;
+}
 
 .wrapper {
   margin: 0px auto;
+}
+.wrapper--max {
+  width: 100%;
 }
 .wrapper--inner {
   max-width: 1500px;
@@ -30,12 +39,15 @@ body {
 .wrapper--text {
   max-width: 1000px;
 }
+.wrapper--800px {
+  max-width: 800px;
+}
 
 
 
 h2 {
   color: var(--color-dark);
-  font-size: 40px;
+  font-size: 36px;
   font-family: "Arsenal", sans-serif;
   font-weight: 700;
   letter-spacing: 0.5px;
@@ -62,4 +74,27 @@ p.p--small {
 }
 p.p--indent {
   text-indent: 30px;
+}
+
+span.no-wrap {
+  white-space: nowrap;
+}
+
+
+
+.absolute {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
 }
