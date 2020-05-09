@@ -1,0 +1,75 @@
+.DrawerCloseIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  transform: scale(0.8);
+  transition: background-color 0.15s ease-in-out 0s;
+}
+.DrawerCloseIcon:hover {
+  background-color: rgba(0, 0, 0, 0.075);
+}
+
+.DrawerCloseIcon__holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75px;
+  height: 75px;
+  opacity: 0.5;
+}
+
+.DrawerCloseIcon__icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+}
+
+.DrawerCloseIcon__line {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 3px;
+  border-radius: 2px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+  opacity: 1.0;
+  transition: background-color 0.25s ease-in-out 0.35s;
+}
+
+.Header--theme-light .DrawerCloseIcon__line {
+  background-color: var(--color-dark);
+}
+.Header--theme-dark .DrawerCloseIcon__line {
+  background-color: #fff;
+}
+
+
+
+.DrawerCloseIcon__line:not(:first-child) {
+  margin-top: 7px;
+}
+
+.DrawerCloseIcon .DrawerCloseIcon__line:nth-child(1) {
+  top: 10px;
+  left: 0px;
+  transform: rotate(45deg);
+}
+.DrawerCloseIcon .DrawerCloseIcon__line:nth-child(2) {
+  left: -50%;
+  width: 200%;
+  opacity: 0;
+}
+.DrawerCloseIcon .DrawerCloseIcon__line:nth-child(3) {
+  top: -10px;
+  left: 0px;
+  transform: rotate(-45deg);
+}
