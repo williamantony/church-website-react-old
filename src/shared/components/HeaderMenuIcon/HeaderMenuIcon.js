@@ -1,46 +1,18 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { toggleNavigation } from "../../redux/actions";
+import React from "react";
 import "./HeaderMenuIcon.css";
 
-class HeaderMenuIcon extends Component {
-  state = {
-    isOpen: false,
-  }
-
-  static getDerivedStateFromProps(props, state) {
-    if (props.isOpen !== state.isOpen) {
-      return {
-        isOpen: props.isOpen,
-      };
-    }
-    return null;
-  }
-
-  render() {
-    const isOpenedClassName = this.state.isOpen ? " HeaderMenuIcon--open" : "";
-    const className = `HeaderMenuIcon${ isOpenedClassName }`;
-
-    return (
-      <div className={ className } onClick={ this.props.toggleNavigation }>
-        <div className="HeaderMenuIcon__holder">
+const HeaderMenuIcon = ({ onClick }) => {
+  return (
+    <div className="HeaderMenuIcon" onClick={ onClick }>
+      <div className="HeaderMenuIcon__holder">
+        <div className="HeaderMenuIcon__icon">
           <div className="HeaderMenuIcon__line"></div>
           <div className="HeaderMenuIcon__line"></div>
           <div className="HeaderMenuIcon__line"></div>
         </div>
       </div>
-    );
-  }
-}
-
-const mapStateToProps = state => {
-  return {
-    isOpen: state.theme.isNavigationVisible,
-  };
+    </div>
+  );
 };
 
-const mapDispatchToProps = {
-  toggleNavigation,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(HeaderMenuIcon);
+export default HeaderMenuIcon;
