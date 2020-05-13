@@ -1,9 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const NavigationItemBlock = function ({ menu, onToggleCollapse }) {
+const NavigationItemBlock = function ({ menu, level, onToggleCollapse }) {
   return (
-    <div className="NavigationItemBlock">
+    <div
+      className="NavigationItemBlock"
+      style={{ paddingLeft: `${(level - 1) * 25}px` }}
+    >
       {menu.link ? (
         <NavLink to={menu.link} className="NavigationItemBlock__text">
           {menu.text}

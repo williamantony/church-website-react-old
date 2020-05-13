@@ -1,13 +1,13 @@
 import { SET_PAGE } from "../actions";
 
 const initialState = {
+  name: null,
   isActive: true,
   isScrollable: true,
 };
 
-export default function(state = initialState, action) {
-  switch(action.type) {
-
+export default function (state = initialState, action) {
+  switch (action.type) {
     case SET_PAGE:
       return {
         ...state,

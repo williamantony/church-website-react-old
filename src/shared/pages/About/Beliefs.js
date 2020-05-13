@@ -7,10 +7,10 @@ import BeliefsList from "../../components/BeliefsList/BeliefsList";
 import HomeAboutGrid from "../../components/HomeAboutGrid/HomeAboutGrid";
 import PrimaryHeader from "../../components/PrimaryHeader/PrimaryHeader";
 
-const Beliefs = function(props) {
+const Beliefs = function (props) {
   return (
     <Page name="beliefs">
-      <Header component={ <PrimaryHeader logo="ipa" /> } />
+      <Header component={<PrimaryHeader logo="ipa" />} />
       <PageBanner>
         <PageTitle title="Our Beliefs" />
       </PageBanner>

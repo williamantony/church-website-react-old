@@ -1,7 +1,7 @@
 import React from "react";
 import NavigationItem from "./NavigationItem";
 
-const NavigationSet = function ({ set, level }) {
+const NavigationSet = function ({ set, level, isCollapsed }) {
   if (!set) return null;
 
   return (

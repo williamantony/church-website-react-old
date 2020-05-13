@@ -8,23 +8,32 @@ export const setPage = (state = {}) => {
   };
 };
 
-
+/* PAGE NAME */
+export const setPageName = (name) => {
+  return (dispatch) => {
+    dispatch(setPage({ name }));
+  };
+};
 
 /* PAGE ACTIVE/INACTIVE */
 export const setPageActive = () => {
-  return dispatch => {
-    dispatch({
-      isActive: true,
-      isScrollable: true,
-    });
+  return (dispatch) => {
+    dispatch(
+      setPage({
+        isActive: true,
+        isScrollable: true,
+      })
+    );
   };
 };
 
 export const setPageInactive = () => {
-  return dispatch => {
-    dispatch({
-      isActive: false,
-      isScrollable: false,
-    });
+  return (dispatch) => {
+    dispatch(
+      setPage({
+        isActive: false,
+        isScrollable: false,
+      })
+    );
   };
 };
