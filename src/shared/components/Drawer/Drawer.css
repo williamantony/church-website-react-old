@@ -11,14 +11,12 @@
 
 .Drawer--closed {
   visibility: hidden;
-  transition: visibility 0s ease-in-out 1s;
+  transition: visibility 0s ease 1s;
 }
 .Drawer--open {
   visibility: visible;
-  transition: visibility 0s ease-in-out 0s;
+  transition: visibility 0s ease 0s;
 }
-
-
 
 .Drawer__overlay {
   position: absolute;
@@ -32,17 +30,13 @@
 .Drawer--closed .Drawer__overlay {
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0.5s ease-in-out 0.5s,
-    opacity 0.5s ease-in-out 0.5s;
+  transition: visibility 0.5s ease 0.5s, opacity 0.5s ease 0.5s;
 }
 .Drawer--open .Drawer__overlay {
   visibility: visible;
   opacity: 0.9;
-  transition: visibility 0.5s ease-in-out 0s,
-    opacity 0.5s ease-in-out 0s;
+  transition: visibility 0.5s ease 0s, opacity 0.5s ease 0s;
 }
-
-
 
 .Drawer__board {
   position: relative;
@@ -52,31 +46,23 @@
 }
 
 .Drawer--closed .Drawer__board {
-  max-height: 0px;
-  transition: max-height 0.5s ease-in-out 0s;
+  visibility: hidden;
+  opacity: 0;
+  margin-top: -200px;
+  transition: visibility 0s ease 0.5s, opacity 0.5s ease 0s, margin 0.5s ease 0s;
 }
 .Drawer--open .Drawer__board {
-  max-height: 400px;
-  transition: max-height 0.5s ease-in-out 0.5s;
+  visibility: visible;
+  opacity: 1;
+  margin-top: 0px;
+  transition: visibility 0s ease 0s, opacity 0.5s ease 0s, margin 0.5s ease 0s;
 }
-
-
 
 .Drawer--closed .Drawer__holder {
   opacity: 0;
-  transition: opacity 0.5s ease-in-out 0s;
+  transition: opacity 0.5s ease 0s;
 }
 .Drawer--open .Drawer__holder {
-  opacity: 1.0;
-  transition: opacity 0.5s ease-in-out 0.75s;
-}
-
-
-
-.Drawer--navigation.Drawer--open .Drawer__board {
-  max-height: 400px;
-}
-.Drawer--search.Drawer--open .Drawer__board {
-  max-height: 250px;
-  transition: max-height 0.25s ease-in-out 0.5s;
+  opacity: 1;
+  transition: opacity 1s ease 0.25s;
 }

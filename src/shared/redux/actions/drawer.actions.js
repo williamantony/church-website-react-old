@@ -1,3 +1,4 @@
+import { batch } from "react-redux";
 import { setPageActive, setPageInactive } from "../actions";
 
 /* DRAWER */
@@ -10,20 +11,18 @@ export const setDrawer = (state = {}) => {
   };
 };
 
-
-
-export const openDrawer = type => {
-  return dispatch => {
-
-    setPageInactive();
-
-    dispatch(
-      setDrawer({
-        isMounted: true,
-        isOpen: false,
-        type,
-      })
-    );
+export const openDrawer = (type) => {
+  return (dispatch) => {
+    batch(() => {
+      dispatch(setPageInactive());
+      dispatch(
+        setDrawer({
+          isMounted: true,
+          isOpen: false,
+          type,
+        })
+      );
+    });
 
     setTimeout(() => {
       dispatch(
@@ -32,15 +31,11 @@ export const openDrawer = type => {
         })
       );
     }, 150);
-
   };
 };
 
-
-
 export const closeDrawer = () => {
-  return dispatch => {
-    
+  return (dispatch) => {
     dispatch(
       setDrawer({
         isOpen: false,
@@ -48,32 +43,29 @@ export const closeDrawer = () => {
     );
 
     setTimeout(() => {
-      dispatch(
-        setDrawer({
-          isMounted: false,
-        })
-      );
+      batch(() => {
+        dispatch(
+          setDrawer({
+            isMounted: false,
+          })
+        );
 
-      setPageActive();
+        dispatch(setPageActive());
+      });
     }, 500);
-
   };
 };
 
-
-
 /* SEARCH DRAWER */
 export const showSearch = () => {
-  return dispatch => {
+  return (dispatch) => {
     dispatch(openDrawer("search"));
   };
 };
 
-
-
 /* NAVIGATION DRAWER */
 export const showNavigation = () => {
-  return dispatch => {
+  return (dispatch) => {
     dispatch(openDrawer("navigation"));
   };
 };
