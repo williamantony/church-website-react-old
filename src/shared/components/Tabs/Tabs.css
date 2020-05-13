@@ -1,0 +1,12 @@
+.Tabs {
+}
+
+.Tabs__links {
+  display: flex;
+  justify-content: center;
+}
+
+.Tabs__content {
+  position: relative;
+  height: 250px;
+}
