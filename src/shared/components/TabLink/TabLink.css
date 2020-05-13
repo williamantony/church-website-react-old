@@ -1,0 +1,22 @@
+.TabLink {
+  cursor: pointer;
+  transition: background-color 0.25s ease-in-out 0s;
+}
+.TabLink--selected {
+  background-color: #eee;
+}
+.TabLink:not(.TabLink--selected):hover {
+  background-color: #f5f5f5;
+}
+
+.TabLink__holder {
+  padding: 20px 35px;
+}
+
+.TabLink__text {
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  text-shadow: 0.75px 0px 0px;
+  letter-spacing: 0.5px;
+}
