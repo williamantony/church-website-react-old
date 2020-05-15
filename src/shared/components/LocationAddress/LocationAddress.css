@@ -1,0 +1,37 @@
+.LocationAddress {
+  position: relative;
+  padding: 100px 0px 200px 0px;
+  margin-bottom: -250px;
+  z-index: 1;
+  background: -moz-linear-gradient(
+    top,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 66%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 66%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 66%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 );
+}
+
+.LocationAddress__text {
+  text-align: center;
+}
+
+.LocationAddress__text h2 {
+  margin-bottom: 40px;
+}
+
+.LocationAddress__text__address {
+  font-weight: 400;
+}
