@@ -12,6 +12,7 @@ class Page extends Component {
 
   componentDidMount() {
     window.scrollTo(0, 0);
+    setTimeout(this.props.closeDrawer, 250);
   }
 
   render() {
