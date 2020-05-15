@@ -69,3 +69,10 @@ export const showNavigation = () => {
     dispatch(openDrawer("navigation"));
   };
 };
+
+/* LOCATION MAP DRAWER */
+export const showLocationMap = () => {
+  return (dispatch) => {
+    dispatch(openDrawer("location-map"));
+  };
+};

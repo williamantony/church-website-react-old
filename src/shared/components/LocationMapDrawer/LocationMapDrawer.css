@@ -1,0 +1,12 @@
+.LocationMapDrawer {
+  position: relative;
+  height: calc(100vh - 125px);
+}
+
+.LocationMapDrawer iframe {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}

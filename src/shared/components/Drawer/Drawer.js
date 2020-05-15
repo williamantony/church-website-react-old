@@ -5,6 +5,7 @@ import DrawerHeader from "../DrawerHeader/DrawerHeader";
 import DrawerItem from "../DrawerItem/DrawerItem";
 import NavigationDrawer from "../NavigationDrawer/NavigationDrawer";
 import SearchDrawer from "../SearchDrawer/SearchDrawer";
+import LocationMapDrawer from "../LocationMapDrawer/LocationMapDrawer";
 import "./Drawer.css";
 
 const Drawer = function ({ isMounted, isOpen, type = "none", closeDrawer }) {
@@ -22,6 +23,7 @@ const Drawer = function ({ isMounted, isOpen, type = "none", closeDrawer }) {
             <DrawerHeader logo="ipa" />
             <DrawerItem name="navigation" component={<NavigationDrawer />} />
             <DrawerItem name="search" component={<SearchDrawer />} />
+            <DrawerItem name="location-map" component={<LocationMapDrawer />} />
           </div>
         ) : null}
       </div>
