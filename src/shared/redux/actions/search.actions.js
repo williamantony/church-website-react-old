@@ -8,23 +8,23 @@ export const setSearch = (state = {}) => {
   };
 };
 
-
-
 /* SEARCH FOCUS/UNFOCUS */
 export const focusSearchInput = () => {
-  return dispatch => {
-    const state = {
-      isFocused: true,
-    };
-    dispatch(setSearch(state));
+  return (dispatch) => {
+    dispatch(
+      setSearch({
+        isFocused: true,
+      })
+    );
   };
 };
 
 export const unfocusSearchInput = () => {
-  return dispatch => {
-    const state = {
-      isFocused: false,
-    };
-    dispatch(setSearch(state));
+  return (dispatch) => {
+    dispatch(
+      setSearch({
+        isFocused: false,
+      })
+    );
   };
 };
