@@ -3,6 +3,7 @@ import NotFoundError from "../pages/Error/NotFoundError";
 import About from "../pages/About/About";
 import Leadership from "../pages/About/Leadership";
 import Beliefs from "../pages/About/Beliefs";
+import Location from "../pages/Location/Location";
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     exact: true,
     path: "/about/beliefs",
     component: Beliefs,
+  },
+  {
+    exact: true,
+    path: "/location",
+    component: Location,
   },
   {
     component: NotFoundError,
