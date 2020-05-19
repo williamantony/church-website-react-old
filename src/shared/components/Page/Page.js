@@ -7,12 +7,24 @@ import "./Page.css";
 class Page extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      isLoaded: false,
+    };
+
     props.setPageName(props.name);
   }
 
   componentDidMount() {
     window.scrollTo(0, 0);
-    setTimeout(this.props.closeDrawer, 250);
+
+    setTimeout(() => {
+      this.props.closeDrawer();
+
+      this.setState({
+        isLoaded: true,
+      });
+    }, 250);
   }
 
   render() {
@@ -21,16 +33,17 @@ class Page extends Component {
     if (isScrollable) document.body.classList.remove("no-scroll");
     else document.body.classList.add("no-scroll");
 
-    const classes = {
-      name: ` Page--${name}`,
-      active: ` Page--${isActive ? "active" : "inactive"}`,
-    };
+    let pageClassName = "Page";
+    pageClassName += ` Page--${name}`;
+    pageClassName += ` Page--${isActive ? "active" : "inactive"}`;
+    pageClassName += this.state.isLoaded ? " Page--loaded" : "";
 
     return (
       <div className="wrapper wrapper--outer">
-        <div className={`Page${classes.name}${classes.active}`}>
+        <div className={pageClassName}>
           <Drawer />
           <div className="Page__content">{this.props.children}</div>
+          <div className="Page__overlay"></div>
         </div>
       </div>
     );
