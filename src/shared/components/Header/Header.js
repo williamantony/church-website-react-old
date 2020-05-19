@@ -1,40 +1,81 @@
-import React from "react";
+import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { setHeaderTheme } from "../../redux/actions";
+import { initHeader, showHeader, hideHeader } from "../../redux/actions";
 import withScrollAction from "./withScrollAction";
 import "./Header.css";
 
-const Header = function ({
-  theme = "transparent",
-  logo = "ipa",
-  isVisible,
-  component,
-  setHeaderTheme,
-}) {
-  setHeaderTheme(theme);
+class Header extends Component {
+  constructor(props) {
+    super(props);
 
-  const classes = {
-    theme: ` Header--theme-${theme}`,
-    logo: ` Header--logo-${logo}`,
-    visible: isVisible ? " Header--isVisible" : "",
-  };
+    this.state = {
+      theme: props.defaultTheme,
+      isVisible: props.isVisible,
+    };
 
-  const className = `Header${classes.theme}${classes.logo}${classes.visible}`;
+    props.initHeader(props.defaultTheme);
+  }
 
-  return <header className={className}>{component}</header>;
-};
+  static getDerivedStateFromProps(props, state) {
+    const newState = {};
 
-const mapStateToProps = (state) => {
+    if (state.theme !== props.currentTheme) {
+      newState.theme = props.currentTheme;
+    }
+
+    if (state.isVisible !== props.isVisible) {
+      newState.isVisible = props.isVisible;
+    }
+
+    if (Object.keys(newState).length !== 0) {
+      return newState;
+    }
+
+    return null;
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      if (window.scrollY < 100) {
+        this.props.showHeader();
+      }
+    }, 0);
+  }
+
+  componentWillUnmount() {
+    this.props.hideHeader();
+  }
+
+  render() {
+    const { theme, isVisible } = this.state;
+    const { logo = "ipa", component } = this.props;
+
+    let headerClassName = "Header";
+    headerClassName += ` Header--theme-${theme}`;
+    headerClassName += ` Header--logo-${logo}`;
+    headerClassName += isVisible ? " Header--isVisible" : "";
+
+    return <header className={headerClassName}>{component}</header>;
+  }
+}
+
+const mapStateToProps = (state, props) => {
+  const defaultTheme = props.theme || state.header.theme.default;
+
   return {
-    theme: state.header.theme,
+    defaultTheme,
+    currentTheme: state.header.theme.current || defaultTheme,
     isVisible: state.header.isVisible,
   };
 };
 
 const mapDispatchToProps = {
-  setHeaderTheme,
+  initHeader,
+  showHeader,
+  hideHeader,
 };
 
-export default withScrollAction(
-  connect(mapStateToProps, mapDispatchToProps)(Header)
+export default withRouter(
+  withScrollAction(connect(mapStateToProps, mapDispatchToProps)(Header))
 );

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { showHeader, hideHeader } from "../../redux/actions";
+import { showHeader, hideHeader, setHeaderTheme } from "../../redux/actions";
 
 const withScrollAction = function (Header) {
   class ScrollAction extends Component {
@@ -26,18 +26,19 @@ const withScrollAction = function (Header) {
 
         if (newDirection !== this.scroll.direction) {
           this.scroll.direction = newDirection;
-          this.handleScrollChange();
+
+          if (newDirection === "DOWN") {
+            this.props.hideHeader();
+          } else if (newDirection === "UP") {
+            this.props.showHeader();
+          }
         }
+
+        const newTheme = current > 100 ? "dark" : null;
+        this.props.setHeaderTheme(newTheme);
       }
 
       this.scroll.current = current;
-    };
-
-    handleScrollChange = () => {
-      const { showHeader, hideHeader } = this.props;
-
-      if (this.scroll.direction === "DOWN") hideHeader();
-      else showHeader();
     };
 
     render() {
@@ -52,6 +53,7 @@ const withScrollAction = function (Header) {
   const mapDispatchToProps = {
     showHeader,
     hideHeader,
+    setHeaderTheme,
   };
 
   return connect(mapStateToProps, mapDispatchToProps)(ScrollAction);
