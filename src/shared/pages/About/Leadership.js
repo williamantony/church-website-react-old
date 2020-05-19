@@ -7,10 +7,10 @@ import LeadershipGrid from "../../components/LeadershipGrid/LeadershipGrid";
 import HomeAboutGrid from "../../components/HomeAboutGrid/HomeAboutGrid";
 import PrimaryHeader from "../../components/PrimaryHeader/PrimaryHeader";
 
-const Leadership = function(props) {
+const Leadership = function (props) {
   return (
     <Page name="leadership">
-      <Header component={ <PrimaryHeader logo="ipa" /> } />
+      <Header component={<PrimaryHeader logo="ipa" />} />
       <PageBanner>
         <PageTitle title="Leadership" />
       </PageBanner>

@@ -8,10 +8,10 @@ import PageTitle from "../../components/PageTitle/PageTitle";
 import AboutLocation from "../../components/AboutLocation/AboutLocation";
 import PrimaryHeader from "../../components/PrimaryHeader/PrimaryHeader";
 
-const About = function(props) {
+const About = function (props) {
   return (
     <Page name="about">
-      <Header component={ <PrimaryHeader logo="ipa" /> } />
+      <Header component={<PrimaryHeader logo="ipa" />} />
       <PageBanner>
         <PageTitle title="About Us" />
       </PageBanner>
