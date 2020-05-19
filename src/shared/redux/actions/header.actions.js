@@ -1,43 +1,53 @@
 /* HEADER */
-export const SET_HEADER = "SET_HEADER";
+export const INIT_HEADER = "INIT_HEADER";
+export const SHOW_HEADER = "SHOW_HEADER";
+export const HIDE_HEADER = "HIDE_HEADER";
+export const SET_HEADER_THEME = "SET_HEADER_THEME";
 
-export const setHeader = (state = {}) => {
+export const initHeader = (theme) => {
   return {
-    type: SET_HEADER,
-    payload: state,
-  };
-};
-
-export const setHeaderTheme = (theme) => {
-  return (dispatch) => {
-    const validThemes = ["transparent", "light", "dark"];
-
-    if (validThemes.includes(theme)) {
-      dispatch(
-        setHeader({
-          theme,
-        })
-      );
-    }
+    type: INIT_HEADER,
+    payload: {
+      theme: {
+        passed: theme,
+        current: theme,
+      },
+    },
   };
 };
 
 export const showHeader = () => {
-  return (dispatch) => {
-    dispatch(
-      setHeader({
-        isVisible: true,
-      })
-    );
+  return {
+    type: SHOW_HEADER,
+    payload: {
+      isVisible: true,
+    },
   };
 };
 
 export const hideHeader = () => {
-  return (dispatch) => {
-    dispatch(
-      setHeader({
-        isVisible: false,
-      })
-    );
+  return {
+    type: HIDE_HEADER,
+    payload: {
+      isVisible: false,
+    },
+  };
+};
+
+export const setHeaderTheme = (theme) => {
+  return (dispatch, getState) => {
+    const state = getState().header;
+    const currentTheme = theme || state.theme.passed;
+
+    if (state.theme.current !== currentTheme) {
+      dispatch({
+        type: SET_HEADER_THEME,
+        payload: {
+          theme: {
+            current: currentTheme,
+          },
+        },
+      });
+    }
   };
 };
