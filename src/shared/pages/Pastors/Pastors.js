@@ -3,21 +3,21 @@ import Page from "../../components/Page/Page";
 import Header from "../../components/Header/Header";
 import PageBanner from "../../components/PageBanner/PageBanner";
 import PageTitle from "../../components/PageTitle/PageTitle";
-import LeadershipGrid from "../../components/LeadershipGrid/LeadershipGrid";
+import PastorsList from "../../components/PastorsList/PastorsList";
 import HomeAboutGrid from "../../components/HomeAboutGrid/HomeAboutGrid";
 import PrimaryHeader from "../../components/PrimaryHeader/PrimaryHeader";
 
-const Leadership = function (props) {
+const Pastors = function (props) {
   return (
-    <Page name="leadership">
+    <Page name="pastors">
       <Header component={<PrimaryHeader logo="ipa" />} />
       <PageBanner>
-        <PageTitle title="Leadership" />
+        <PageTitle title="Our Pastors" />
       </PageBanner>
-      <LeadershipGrid />
+      <PastorsList />
       <HomeAboutGrid />
     </Page>
   );
 };
 
-export default Leadership;
+export default Pastors;
