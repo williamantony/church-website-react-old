@@ -1,0 +1,60 @@
+.PastorsListItem {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  flex-basis: 320px;
+  padding: 100px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.25s ease-in-out 0s;
+}
+.PastorsListItem:hover {
+  background-color: #f5f5f5;
+}
+
+.PastorsListItem__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: var(--color-dark);
+  font-family: "Roboto", sans-serif;
+  text-align: left;
+  margin: 35px 0px 0px 25px;
+}
+.PastorsListItem__info__name {
+  font-size: 22px;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.75px;
+  text-shadow: 0.5px 0px 0px;
+  margin-bottom: 10px;
+}
+.PastorsListItem__info__role {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.PastorsListItem__image {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.075);
+  border-radius: 5px;
+  overflow: hidden;
+  transition: box-shadow 0.25s ease-in-out 0s;
+}
+.PastorsListItem:hover .PastorsListItem__image {
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 0);
+}
+.PastorsListItem__image img {
+  position: relative;
+  width: 100%;
+}
+.PastorsListItem__image--joseph {
+  filter: saturate(0.85) contrast(1.15) brightness(1.25);
+}
+.PastorsListItem__image--joseph img {
+  width: 140%;
+  top: -10%;
+  left: -20%;
+}
