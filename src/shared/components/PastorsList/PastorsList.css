@@ -1,0 +1,25 @@
+.PastorsList {
+  position: relative;
+  padding: 0px;
+  background-color: #ffffff;
+}
+
+.PastorsList h2 {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.PastorsList__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.PastorsList__divider {
+  position: absolute;
+  width: 3px;
+  height: 50%;
+  background-color: #f0f0f0;
+  z-index: 1;
+}
