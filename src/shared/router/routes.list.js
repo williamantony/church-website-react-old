@@ -1,9 +1,10 @@
 import Home from "../pages/Home/Home";
 import NotFoundError from "../pages/Error/NotFoundError";
 import About from "../pages/About/About";
-import Leadership from "../pages/About/Leadership";
+import Pastors from "../pages/Pastors/Pastors";
 import Beliefs from "../pages/About/Beliefs";
 import Location from "../pages/Location/Location";
+import PastorProfile from "../pages/Pastors/PastorProfile";
 
 const routes = [
   {
@@ -18,8 +19,13 @@ const routes = [
   },
   {
     exact: true,
-    path: "/about/leadership",
-    component: Leadership,
+    path: "/pastors",
+    component: Pastors,
+  },
+  {
+    exact: true,
+    path: "/pastors/:pastor",
+    component: PastorProfile,
   },
   {
     exact: true,
