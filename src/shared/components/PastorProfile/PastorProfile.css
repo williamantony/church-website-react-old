@@ -1,0 +1,42 @@
+.PastorProfile {
+  position: relative;
+  padding: 100px 0px;
+  background-color: #ffffff;
+}
+.PastorProfile__content {
+  display: flex;
+  justify-content: center;
+}
+.PastorProfile__overview {
+  flex-basis: 400px;
+}
+.PastorProfile__summary {
+  max-width: 680px;
+  flex-basis: calc(100% - 400px);
+  margin: 0px auto;
+}
+
+.PastorProfile__overview__image {
+  position: relative;
+  width: 360px;
+  height: 360px;
+  margin: 0px auto;
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.075);
+  border-radius: 5px;
+  overflow: hidden;
+  transition: box-shadow 0.25s ease-in-out 0s;
+}
+
+.PastorProfile__overview__image img {
+  position: relative;
+  width: 100%;
+}
+
+.PastorProfile__overview__image--joseph {
+  filter: saturate(0.85) contrast(1.15) brightness(1.25);
+}
+.PastorProfile__overview__image--joseph img {
+  width: 140%;
+  top: -10%;
+  left: -20%;
+}
