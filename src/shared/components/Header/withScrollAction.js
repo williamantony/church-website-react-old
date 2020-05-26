@@ -11,6 +11,7 @@ const withScrollAction = function (Header) {
 
     componentDidMount() {
       window.addEventListener("scroll", this.handleScroll);
+      this.handleScroll();
     }
 
     componentWillUnmount() {

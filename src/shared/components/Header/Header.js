@@ -8,13 +8,10 @@ import "./Header.css";
 class Header extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       theme: props.defaultTheme,
       isVisible: props.isVisible,
     };
-
-    props.initHeader(props.defaultTheme);
   }
 
   static getDerivedStateFromProps(props, state) {
@@ -36,15 +33,11 @@ class Header extends Component {
   }
 
   componentDidMount() {
-    setTimeout(() => {
-      if (window.scrollY < 100) {
-        this.props.showHeader();
-      }
-    }, 0);
-  }
+    this.props.initHeader(this.props.defaultTheme);
 
-  componentWillUnmount() {
-    this.props.hideHeader();
+    if (window.scrollY < 100) {
+      this.props.showHeader();
+    }
   }
 
   render() {
