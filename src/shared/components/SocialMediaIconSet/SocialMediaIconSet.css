@@ -1,0 +1,7 @@
+.SocialMediaIconSet {
+  display: flex;
+}
+
+.SocialMediaIconSet a:not(:first-child) {
+  margin-left: 10px;
+}
