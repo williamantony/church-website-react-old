@@ -8,7 +8,11 @@ const NavigationItemBlock = function ({ menu, level, onToggleCollapse }) {
       style={{ paddingLeft: `${(level - 1) * 25}px` }}
     >
       {menu.link ? (
-        <NavLink to={menu.link} className="NavigationItemBlock__text">
+        <NavLink
+          to={menu.link}
+          aria-current="page"
+          className="NavigationItemBlock__text"
+        >
           {menu.text}
         </NavLink>
       ) : (
