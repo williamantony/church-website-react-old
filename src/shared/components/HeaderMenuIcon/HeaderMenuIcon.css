@@ -5,7 +5,7 @@
   width: 75px;
   height: 75px;
   border-radius: 50%;
-  transform: scale(1.0);
+  transform: scale(1);
   overflow: hidden;
   cursor: pointer;
 }
@@ -36,8 +36,7 @@
   margin-left: auto;
   margin-right: auto;
   background-color: #fff;
-  opacity: 1.0;
-  transition: background-color 0.25s ease-in-out 0.35s;
+  opacity: 1;
 }
 
 .Header--theme-light .HeaderMenuIcon__line {

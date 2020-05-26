@@ -16,5 +16,4 @@
   align-items: center;
   flex-basis: calc(100% - 75px);
   height: 125px;
-  transition: opacity 0.25s ease-in-out 0s;
 }

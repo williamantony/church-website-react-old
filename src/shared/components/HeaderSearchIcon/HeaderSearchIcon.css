@@ -19,11 +19,9 @@
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  transition: filter 0.25s ease-in-out 0.5s;
 }
 
 .Header--theme-dark .HeaderSearchIcon__icon,
 .Header--theme-transparent .HeaderSearchIcon__icon {
   filter: invert(1);
-  transition: filter 0.25s ease-in-out 0.35s;
 }

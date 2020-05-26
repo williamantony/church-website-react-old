@@ -19,11 +19,10 @@
   left: 0px;
   width: 100%;
   height: 100%;
-  opacity: 1.0;
+  opacity: 1;
   background-size: 275px auto;
   background-position: 0px 0px;
   background-repeat: no-repeat;
-  transition: opacity 0.25s ease-in-out 0.35s;
 }
 
 .HeaderLogo--logo-ipa .HeaderLogo__image__img--light {
@@ -35,15 +34,11 @@
 .Header--theme-dark .HeaderLogo__image__img--light,
 .Header--theme-light .HeaderLogo__image__img--dark {
   opacity: 0;
-  transition: opacity 0.25s ease-in-out 0.5s;
 }
 .Header--theme-dark .HeaderLogo__image__img--dark,
 .Header--theme-light .HeaderLogo__image__img--light {
-  opacity: 1.0;
-  transition: opacity 0.25s ease-in-out 0.35s;
+  opacity: 1;
 }
-
-
 
 .HeaderLogo--size-small.HeaderLogo--type-icon .HeaderLogo__image {
   width: 84px;
@@ -61,8 +56,6 @@
   background-size: 275px auto;
 }
 
-
-
 .HeaderLogo--size-medium.HeaderLogo--type-icon .HeaderLogo__image {
   width: 92px;
   height: 60px;
@@ -78,8 +71,6 @@
 .HeaderLogo--size-medium .HeaderLogo__image__img {
   background-size: 300px auto;
 }
-
-
 
 .HeaderLogo--size-large.HeaderLogo--type-icon .HeaderLogo__image {
   width: 110px;
