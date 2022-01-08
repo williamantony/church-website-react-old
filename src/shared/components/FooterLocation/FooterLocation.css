@@ -1,0 +1,7 @@
+.FooterLocation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: 800px;
+  max-width: 800px;
+}

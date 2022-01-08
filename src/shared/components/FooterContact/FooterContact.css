@@ -1,0 +1,33 @@
+.FooterContact {
+  /* flex-basis: calc(100% - 800px); */
+  max-width: 480px;
+}
+
+.FooterContact__holder {
+  margin-left: 104px;
+}
+
+.FooterContact__holder h4 {
+  margin-bottom: 15px;
+}
+
+.FooterContact__method {
+  padding: 10px 0px 20px 0px;
+}
+.FooterContact__method__type {
+  font-size: 13px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+.FooterContact__method__value {
+  font-size: 22px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  word-spacing: 0.5px;
+  /* text-shadow: 1px 0px 0px; */
+}

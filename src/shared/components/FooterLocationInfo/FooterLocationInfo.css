@@ -1,0 +1,19 @@
+.FooterLocationInfo {
+  flex-basis: 320px;
+  min-width: 300px;
+}
+
+.FooterLocationInfo__holder {
+  padding-right: 50px;
+}
+
+.FooterLocationInfo__text {
+  color: var(--color-dark);
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.25px;
+  word-spacing: 0.25px;
+  line-height: 28px;
+  margin: 15px 0px 25px 0px;
+}

@@ -15,7 +15,6 @@ const Pastors = function (props) {
         <PageTitle title="Our Pastors" />
       </PageBanner>
       <PastorsList />
-      <HomeAboutGrid />
     </Page>
   );
 };

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { setPageName, closeDrawer } from "../../redux/actions";
 import Drawer from "../Drawer/Drawer";
+import Footer from "../Footer/Footer";
 import "./Page.css";
 
 class Page extends Component {
@@ -42,7 +43,10 @@ class Page extends Component {
       <div className="wrapper wrapper--outer">
         <div className={pageClassName}>
           <Drawer />
-          <div className="Page__content">{this.props.children}</div>
+          <div className="Page__content">
+            {this.props.children}
+            <Footer />
+          </div>
           <div className="Page__overlay"></div>
         </div>
       </div>
