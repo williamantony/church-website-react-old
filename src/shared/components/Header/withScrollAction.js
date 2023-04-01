@@ -1,51 +1,49 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { showHeader, hideHeader, setHeaderTheme } from "../../redux/actions";
 
 const withScrollAction = function (Header) {
-  class ScrollAction extends Component {
-    scroll = {
+  const ScrollAction = function (props) {
+    const scroll = {
       direction: null,
       current: null,
     };
 
-    componentDidMount() {
-      window.addEventListener("scroll", this.handleScroll);
-      this.handleScroll();
-    }
+    useEffect(() => {
+      window.addEventListener("scroll", handleScroll);
+      handleScroll();
 
-    componentWillUnmount() {
-      window.removeEventListener("scroll", this.handleScroll);
-    }
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }, []);
 
-    handleScroll = () => {
-      const last = this.scroll.current;
+    const handleScroll = () => {
+      const last = scroll.current;
       const current = window.scrollY;
 
       if (last !== null) {
         const newDirection = current - last < 0 ? "UP" : "DOWN";
 
-        if (newDirection !== this.scroll.direction) {
-          this.scroll.direction = newDirection;
+        if (newDirection !== scroll.direction) {
+          scroll.direction = newDirection;
 
           if (newDirection === "DOWN") {
-            this.props.hideHeader();
+            props.hideHeader();
           } else if (newDirection === "UP") {
-            this.props.showHeader();
+            props.showHeader();
           }
         }
 
         const newTheme = current > 100 ? "dark" : null;
-        this.props.setHeaderTheme(newTheme);
+        props.setHeaderTheme(newTheme);
       }
 
-      this.scroll.current = current;
+      scroll.current = current;
     };
 
-    render() {
-      return <Header {...this.props} />;
-    }
-  }
+    return <Header {...props} />;
+  };
 
   const mapStateToProps = (state) => {
     return {};

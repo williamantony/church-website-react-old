@@ -1,8 +1,8 @@
 import React from "react";
+import classNames from "classnames";
 import "./ArrowIcon.css";
 
-const ArrowIcon = function({ direction = "right", scale = "1", onClick }) {
-  const className = `ArrowIcon ArrowIcon--${ direction }`;
+const ArrowIcon = function ({ direction = "right", scale = "1", onClick }) {
   let rotation = 0;
 
   switch (direction.toLowerCase()) {
@@ -26,12 +26,14 @@ const ArrowIcon = function({ direction = "right", scale = "1", onClick }) {
       break;
   }
 
+  const ArrowIconClass = classNames("ArrowIcon", `ArrowIcon--${direction}`);
+
   const style = {
-    transform: `rotate(${ rotation }deg) scale(${ scale })`,
+    transform: `rotate(${rotation}deg) scale(${scale})`,
   };
 
   return (
-    <div className={ className } style={ style } onClick={ onClick }>
+    <div className={ArrowIconClass} style={style} onClick={onClick}>
       <div className="ArrowIcon__holder">
         <div className="ArrowIcon__line"></div>
         <div className="ArrowIcon__line"></div>

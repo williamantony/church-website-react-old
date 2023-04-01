@@ -1,50 +1,40 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import SliderControls from "../SliderControls/SliderControls";
 import "./Slider.css";
 
-class Slider extends Component {
-  state = {
-    index: 0,
-    count: 3,
-  }
+const Slider = function (props) {
+  const [index, setIndex] = useState(0);
+  const [count] = useState(3);
 
-  goto = index => {
-    this.setState({ index });
-  }
+  const goto = (nextIndex) => {
+    setIndex(nextIndex);
+  };
 
-  prevSlide = () => {
-    const { index } = this.state;
+  const gotoPrevSlide = () => {
     const prevIndex = index === 0 ? 0 : index - 1;
+    goto(prevIndex);
+  };
 
-    this.goto(prevIndex);
-  }
+  const gotoNextSlide = () => {
+    const nextIndex = index === count - 1 ? count - 1 : index + 1;
+    goto(nextIndex);
+  };
 
-  nextSlide = () => {
-    const { index, count } = this.state;
-    const nextIndex = index === (count - 1) ? count - 1 : index + 1;
+  const style = {
+    marginLeft: `-${index * 100}%`,
+  };
 
-    this.goto(nextIndex);
-  }
-
-  render() {
-    const style = {
-      marginLeft: `-${ this.state.index * 100 }%`,
-    };
-
-    return (
-      <div className="Slider">
-        <div className="Slider__content" style={ style }>
-          {
-            React.Children.map(this.props.children, (child) => {
-              const childProps = { };
-              return React.cloneElement(child, childProps);
-            })
-          }
-        </div>
-        <SliderControls onPrev={ this.prevSlide } onNext={ this.nextSlide } />
+  return (
+    <div className="Slider">
+      <div className="Slider__content" style={style}>
+        {React.Children.map(props.children, (child) => {
+          const childProps = {};
+          return React.cloneElement(child, childProps);
+        })}
       </div>
-    );
-  }
-}
+      <SliderControls onPrev={gotoPrevSlide} onNext={gotoNextSlide} />
+    </div>
+  );
+};
 
 export default Slider;

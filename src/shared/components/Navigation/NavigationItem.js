@@ -1,44 +1,36 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
+import classNames from "classnames";
 import NavigationSet from "./NavigationSet";
 import NavigationItemBlock from "./NavigationItemBlock";
 
-class NavigationItem extends Component {
-  state = {
-    isCollapsed: true,
+const NavigationItem = function ({ menu, level, pageName }) {
+  const [isCollapsed, setCollapseStatus] = useState(true);
+
+  const handleToggleCollapse = () => {
+    setCollapseStatus(!isCollapsed);
   };
 
-  handleToggleCollapse = () => {
-    this.setState({
-      isCollapsed: !this.state.isCollapsed,
-    });
-  };
+  const NavItemClass = classNames("NavigationItem", {
+    "NavigationItem--collapsed": isCollapsed,
+    "NavigationItem--selected": pageName === menu.id,
+  });
 
-  render() {
-    const { pageName, menu, level } = this.props;
-    const { isCollapsed } = this.state;
-
-    const classes = {
-      collapsed: isCollapsed ? " NavigationItem--collapsed" : "",
-      selected: pageName === menu.id ? " NavigationItem--selected" : "",
-    };
-
-    return (
-      <li className={`NavigationItem${classes.collapsed}${classes.selected}`}>
-        <NavigationItemBlock
-          menu={menu}
-          level={level}
-          onToggleCollapse={this.handleToggleCollapse}
-        />
-        <NavigationSet
-          set={menu.children}
-          level={level + 1}
-          isCollapsed={isCollapsed}
-        />
-      </li>
-    );
-  }
-}
+  return (
+    <li className={NavItemClass}>
+      <NavigationItemBlock
+        menu={menu}
+        level={level}
+        onToggleCollapse={handleToggleCollapse}
+      />
+      <NavigationSet
+        set={menu.children}
+        level={level + 1}
+        isCollapsed={isCollapsed}
+      />
+    </li>
+  );
+};
 
 const mapStateToProps = (state) => {
   return {

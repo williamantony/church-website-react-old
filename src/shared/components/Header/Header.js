@@ -1,57 +1,39 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { initHeader, showHeader, hideHeader } from "../../redux/actions";
 import withScrollAction from "./withScrollAction";
+import classNames from "classnames";
 import "./Header.css";
 
-class Header extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      theme: props.defaultTheme,
-      isVisible: props.isVisible,
-    };
-  }
-
-  static getDerivedStateFromProps(props, state) {
-    const newState = {};
-
-    if (state.theme !== props.currentTheme) {
-      newState.theme = props.currentTheme;
-    }
-
-    if (state.isVisible !== props.isVisible) {
-      newState.isVisible = props.isVisible;
-    }
-
-    if (Object.keys(newState).length !== 0) {
-      return newState;
-    }
-
-    return null;
-  }
-
-  componentDidMount() {
-    this.props.initHeader(this.props.defaultTheme);
+const Header = function ({
+  logo = "ipa",
+  component,
+  defaultTheme,
+  currentTheme,
+  isVisible,
+  initHeader,
+  showHeader,
+}) {
+  useEffect(() => {
+    initHeader(defaultTheme);
 
     if (window.scrollY < 100) {
-      this.props.showHeader();
+      showHeader();
     }
-  }
+  }, []);
 
-  render() {
-    const { theme, isVisible } = this.state;
-    const { logo = "ipa", component } = this.props;
+  let headerClass = classNames(
+    "Header",
+    `Header--theme-${currentTheme}`,
+    `Header--logo-${logo}`,
+    {
+      "Header--isVisible": isVisible,
+    }
+  );
 
-    let headerClassName = "Header";
-    headerClassName += ` Header--theme-${theme}`;
-    headerClassName += ` Header--logo-${logo}`;
-    headerClassName += isVisible ? " Header--isVisible" : "";
-
-    return <header className={headerClassName}>{component}</header>;
-  }
-}
+  return <header className={headerClass}>{component}</header>;
+};
 
 const mapStateToProps = (state, props) => {
   const defaultTheme = props.theme || state.header.theme.default;

@@ -1,60 +1,52 @@
-import React, { Component } from "react";
+import React, { useEffect, useRef } from "react";
 import { connect } from "react-redux";
+import classNames from "classnames";
 import { focusSearchInput, unfocusSearchInput } from "../../redux/actions";
 import "./SearchBox.css";
 
-class SearchBox extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      input: React.createRef(),
-    };
-  }
+const SearchBox = function (props) {
+  const inputElement = useRef();
 
-  componentDidMount() {
-    this.autoFocus();
-  }
+  useEffect(() => {
+    autoFocus();
+  }, []);
 
-  autoFocus = () => {
-    if (!this.props.autofocus)
-      return false;
+  const autoFocus = () => {
+    if (!props.autofocus) return false;
 
     setTimeout(() => {
-      this.state.input.current.focus();
+      inputElement.current.focus();
     }, 1000);
-  }
+  };
 
-  render() {
-    const {
-      isFocused,
-      focusSearchInput,
-      unfocusSearchInput,
-    } = this.props;
+  const { isFocused, focusSearchInput, unfocusSearchInput } = props;
 
-    const classes = {
-      focus: isFocused ? ` SearchBox--focused` : "",
-    };
+  const SearchBoxClass = classNames("SearchBox", {
+    "SearchBox--focused": isFocused,
+  });
 
-    return (
-      <div className={ `SearchBox${ classes.focus }` }>
-        <div className="SearchBox__overlay" onMouseDown={ unfocusSearchInput }></div>
-        <div className="SearchBox__block" onMouseDown={ focusSearchInput }>
-          <div className="SearchBox__input">
-            <input
-              ref={ this.state.input }
-              type="text"
-              className="SearchBox__input-element"
-              onFocus={ focusSearchInput }
-              />
-          </div>
-          <div className="SearchBox__icon"></div>
+  return (
+    <div className={SearchBoxClass}>
+      <div
+        className="SearchBox__overlay"
+        onMouseDown={unfocusSearchInput}
+      ></div>
+      <div className="SearchBox__block" onMouseDown={focusSearchInput}>
+        <div className="SearchBox__input">
+          <input
+            ref={inputElement}
+            type="text"
+            className="SearchBox__input-element"
+            onFocus={focusSearchInput}
+          />
         </div>
+        <div className="SearchBox__icon"></div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     isFocused: state.search.isFocused,
   };

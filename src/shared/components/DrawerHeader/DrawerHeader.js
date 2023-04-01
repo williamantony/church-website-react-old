@@ -5,15 +5,15 @@ import HeaderLogo from "../HeaderLogo/HeaderLogo";
 import DrawerCloseIcon from "../DrawerCloseIcon/DrawerCloseIcon";
 import "./DrawerHeader.css";
 
-const DrawerHeader = function({ logo = "ipa", closeDrawer }) {
+const DrawerHeader = function ({ logo = "ipa", closeDrawer }) {
   return (
-    <div className="DrawerHeader Header--theme-light"> 
+    <div className="DrawerHeader Header--theme-light">
       <div className="wrapper wrapper--max wrapper--inner">
         <div className="DrawerHeader__holder">
           <div className="DrawerHeader__logo">
-            <HeaderLogo logo={ logo } type="full" />
+            <HeaderLogo logo={logo} type="full" />
           </div>
-          <DrawerCloseIcon onClick={ closeDrawer } />
+          <DrawerCloseIcon onClick={closeDrawer} />
         </div>
       </div>
     </div>

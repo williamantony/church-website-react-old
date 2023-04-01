@@ -1,7 +1,7 @@
 import React from "react";
 import FooterMain from "../FooterMain/FooterMain";
-import "./Footer.css";
 import FooterLocation from "../FooterLocation/FooterLocation";
+import "./Footer.css";
 
 const Footer = function (props) {
   return (

@@ -3,7 +3,7 @@ import "./HeaderMenuIcon.css";
 
 const HeaderMenuIcon = ({ onClick }) => {
   return (
-    <div className="HeaderMenuIcon" onClick={ onClick }>
+    <div className="HeaderMenuIcon" onClick={onClick}>
       <div className="HeaderMenuIcon__holder">
         <div className="HeaderMenuIcon__icon">
           <div className="HeaderMenuIcon__line"></div>

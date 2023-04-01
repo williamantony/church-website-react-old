@@ -1,8 +1,8 @@
 import React from "react";
-import "./HomeWelcome.css";
 import Button from "../Button/Button";
+import "./HomeWelcome.css";
 
-const HomeWelcome = function(props) {
+const HomeWelcome = function (props) {
   return (
     <div className="HomeWelcome">
       <div className="HomeWelcome__title">

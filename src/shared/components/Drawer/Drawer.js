@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import classNames from "classnames";
 import { closeDrawer } from "../../redux/actions";
 import DrawerHeader from "../DrawerHeader/DrawerHeader";
 import DrawerItem from "../DrawerItem/DrawerItem";
@@ -9,13 +10,14 @@ import LocationMapDrawer from "../LocationMapDrawer/LocationMapDrawer";
 import "./Drawer.css";
 
 const Drawer = function ({ isMounted, isOpen, type = "none", closeDrawer }) {
-  const classes = {
-    open: ` Drawer--${isOpen ? "open" : "closed"}`,
-    type: ` Drawer--${type}`,
-  };
+  const DrawerClass = classNames(
+    "Drawer",
+    `Drawer--${isOpen ? "open" : "closed"}`,
+    `Drawer--${type}`
+  );
 
   return (
-    <div className={`Drawer${classes.open}${classes.type}`}>
+    <div className={DrawerClass}>
       <div className="Drawer__overlay" onClick={closeDrawer}></div>
       <div className="Drawer__board">
         {isMounted ? (

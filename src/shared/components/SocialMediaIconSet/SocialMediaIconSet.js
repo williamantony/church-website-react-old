@@ -1,6 +1,6 @@
 import React from "react";
-import "./SocialMediaIconSet.css";
 import SocialMediaIcon from "../SocialMediaIcon/SocialMediaIcon";
+import "./SocialMediaIconSet.css";
 
 const SocialMediaIconSet = function ({ list }) {
   return (
